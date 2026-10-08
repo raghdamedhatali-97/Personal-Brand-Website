@@ -1,0 +1,19 @@
+{
+  "name": "personal-brand-website",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "description": "Raghda Medhat Ali's personal website, with a hand-painted hero animation made with ClaudeAnimationBase (p5.js + p5.brush)",
+  "scripts": {
+    "site": "node serve.mjs",
+    "hero": "node render.mjs --lite --clip --out=out/hero_master.mp4 && node render.mjs --lite --stills=6.6 --out=out/stills && npm run hero:web",
+    "hero:web": "ffmpeg -y -loglevel error -i out/hero_master.mp4 -vf scale=1280:-2 -c:v libx264 -preset slow -crf 27 -pix_fmt yuv420p -movflags +faststart -an site/assets/hero.mp4 && ffmpeg -y -loglevel error -i out/stills/t6_60.png -vf scale=1280:-1 -q:v 3 site/assets/hero-poster.jpg",
+    "sheet": "node render.mjs --lite --sheet=0.5,1.7,2.4,3.3,4.6,5.2,6.0,7.2 --cols=4 --w=480 --out=out/check/hero.jpg",
+    "video": "node render.mjs --clip --out=out/video.mp4"
+  },
+  "dependencies": {
+    "p5": "^2.3.3",
+    "p5.brush": "^2.2.3",
+    "puppeteer-core": "^25.11.0"
+  }
+}
