@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- EDIT: page title and description (shown in Google results and link previews) -->
-<title>Raghda Medhat Ali · FP&amp;A</title>
-<meta name="description" content="Raghda Medhat Ali: financial planning & analysis, budgeting, forecasting and the stories behind the numbers.">
-<meta property="og:title" content="Raghda Medhat Ali · FP&amp;A">
-<meta property="og:description" content="Financial planning & analysis, budgeting, forecasting and the stories behind the numbers.">
+<title>Raghda Medhat Ali · The FP&amp;A Engineer</title>
+<meta name="description" content="Raghda Medhat Ali, the FP&A Engineer: budgets, forecasts and performance reviews built to be tested, traced and used.">
+<meta property="og:title" content="Raghda Medhat Ali · The FP&amp;A Engineer">
+<meta property="og:description" content="Budgets, forecasts and performance reviews built to be tested, traced and used.">
 <meta property="og:image" content="assets/hero-poster.jpg">
 <meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FAF8F4">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="vendor/lenis.css">
 <link rel="stylesheet" href="styles.css">
 <!-- Motion is on unless the visitor prefers reduced motion; effects.js removes the class if anything fails to load. -->
@@ -22,49 +23,103 @@
 <body>
 
 <header class="nav">
-  <a class="brand" href="#top">Raghda<span>.</span></a>
-  <nav>
+  <a class="brand" href="#top" aria-label="Raghda Medhat Ali, home">
+    <img src="assets/brand/mark.svg" alt="" width="36" height="36">
+    <span><b>Raghda Medhat Ali</b><small>The FP&amp;A Engineer</small></span>
+  </a>
+  <nav aria-label="Main">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
     <a href="#about">About</a>
-    <a href="#work">What I do</a>
-    <a href="#experience">Experience</a>
-    <a href="#words">Kind words</a>
-    <a href="#writing">Writing</a>
-    <a class="btn small" href="#contact">Say hello</a>
+    <a href="#notes">Notes</a>
   </nav>
+  <a class="btn" href="#contact">Work with me</a>
 </header>
 
 <main id="top">
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="hero-text">
-      <div class="hello">
-        <!-- EDIT: put your photo at site/assets/photo.jpg and swap the initials for: <img src="assets/photo.jpg" alt="Raghda Medhat Ali"> -->
-        <span class="avatar" aria-hidden="true">RM</span>
-        <p class="note">hi, I'm</p>
-        <span class="status"><i></i> Open to new opportunities</span>
-      </div>
-      <h1>Raghda Medhat Ali</h1>
-      <!-- EDIT: your one-line positioning -->
-      <p class="lede">I help businesses <em>grow on purpose</em>: budgets, forecasts and performance stories that turn numbers into decisions.</p>
-      <div class="cta">
-        <a class="btn" href="#contact">Work with me</a>
-        <a class="btn ghost" href="#writing">Read my notes</a>
-      </div>
-      <ul class="tags">
-        <li>FP&amp;A</li><li>Budgeting</li><li>Forecasting</li><li>Board reporting</li><li>Financial modeling</li>
-      </ul>
+    <!-- EDIT: your headline -->
+    <h1>Numbers engineered for better decisions</h1>
+    <a class="badge" href="#contact" aria-label="Open for work: get in touch">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <defs><path id="ring" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" /></defs>
+        <text><textPath href="#ring" textLength="486">OPEN FOR WORK · OPEN FOR WORK · </textPath></text>
+      </svg>
+      <img src="assets/brand/mark.svg" alt="">
+    </a>
+  </section>
+
+  <!-- ============ CARD WALL ============ -->
+  <!-- FP&A cheat-codes as cards. Each .col scrolls on its own; edit or add cards freely. -->
+  <section class="wall" aria-label="FP&amp;A cheat-codes">
+    <div class="col">
+      <div class="tile t-blush"><p>Before you send it: does it tie, does it roll, would a stranger follow it?</p></div>
+      <div class="tile t-cream"><span class="shape tri gold"></span><p>Set one assumption per input cell. Name its owner.</p></div>
+      <div class="tile t-white"><p>Which single driver moves your P&amp;L the most?</p></div>
     </div>
-    <figure class="hero-art">
-      <video autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-label="A hand-painted cartoon: a small character waters a row of bar-chart seedlings, they grow into a rising chart, and it hops for joy.">
-        <source src="assets/hero.mp4" type="video/mp4">
-      </video>
-      <figcaption class="note">small seeds, compounding</figcaption>
-    </figure>
+    <div class="col">
+      <div class="tile t-white"><p>What does the CEO ask about first? Put that number on page one.</p></div>
+      <div class="tile t-coral"><span class="shape diamond peach"></span><h4>Actual minus budget</h4><small>cheat-code</small></div>
+      <div class="tile t-sky"><span class="shape pill rose"></span><p>Volume times price, minus the cost to serve. Everything else is detail.</p></div>
+    </div>
+    <div class="col">
+      <div class="tile t-green"><span class="shape penta mint"></span><h4>Does it tie?</h4><small>cheat-code</small></div>
+      <div class="tile t-white"><span class="shape hills gold"></span><p>Which forecasts do you rebuild every month from scratch?</p></div>
+      <div class="tile t-blush"><p>Colour your inputs blue. Hardcodes hide in plain sight.</p></div>
+    </div>
+    <div class="col">
+      <div class="tile t-white"><p>Write the slide title first. Then build the chart that proves it.</p></div>
+      <div class="tile t-sky"><span class="shape pill rose"></span><p>Open last month's model. Delete one tab nobody reads.</p></div>
+      <div class="tile t-navy"><span class="shape half sky"></span><h4>Rolling forecast</h4><small>cheat-code</small></div>
+    </div>
+    <div class="col">
+      <div class="tile t-cream"><span class="shape crown gold"></span><p>Twelve months forward, every month. No year-end cliff.</p></div>
+      <div class="tile t-white"><p>What would you cut first if revenue landed 10% short?</p></div>
+      <div class="tile t-gold"><span class="shape tri cream"></span><h4 class="dark">Budget season</h4><small class="dark">cheat-code</small></div>
+    </div>
+    <div class="col">
+      <div class="tile t-navy"><span class="shape tri sky"></span><h4>Variance to drivers</h4><small>cheat-code</small></div>
+      <div class="tile t-white"><span class="shape half green"></span><p>Explain the gap in one sentence before you build the bridge.</p></div>
+      <div class="tile t-cream"><p>Price, volume, mix. Name which one moved.</p></div>
+    </div>
+    <div class="col">
+      <div class="tile t-gold"><span class="shape tri cream"></span><h4 class="dark">Board pack</h4><small class="dark">cheat-code</small></div>
+      <div class="tile t-white"><span class="shape square blush"></span><p>Cash is a fact. Profit is an opinion. Report both.</p></div>
+      <div class="tile t-sky"><p>Close the books, then close the loop: what will you do differently?</p></div>
+    </div>
+    <div class="col">
+      <div class="tile t-white"><p>Name the smallest assumption that would change the answer.</p></div>
+      <div class="tile t-blush"><span class="shape diamond plum"></span><p>Check the sign convention before you check anything else.</p></div>
+      <div class="tile t-green"><span class="shape penta mint"></span><h4>Three statements</h4><small>cheat-code</small></div>
+    </div>
+  </section>
+
+  <!-- ============ PARTNER ============ -->
+  <section id="about" class="partner">
+    <aside class="partner-side">
+      <p class="eyebrow">Your new<br>finance partner <span aria-hidden="true">↓</span></p>
+      <!-- EDIT: put your photo at site/assets/photo.jpg and replace the placeholder div with:
+           <img class="portrait" src="assets/photo.jpg" alt="Raghda Medhat Ali"> -->
+      <div class="portrait placeholder" role="img" aria-label="Photo of Raghda Medhat Ali coming soon"><img src="assets/brand/mark.svg" alt=""></div>
+      <p>Hi, good to meet you. I'm Raghda, an FP&amp;A analyst who builds finance models the way engineers build systems: tested, traceable and made to be used.</p>
+      <a class="btn ghost" href="#services">What I do</a>
+    </aside>
+    <div class="partner-main">
+      <!-- EDIT: your years of experience -->
+      <p class="statement">For [8+] years, I've built the budgets, forecasts and monthly reviews that leadership teams use to decide what happens next.</p>
+      <!-- EDIT: swap for companies you've worked with, once you're happy to name them -->
+      <div class="logos" aria-label="Disciplines">
+        <div class="logos-track">
+          <span class="lg-1">Budgeting</span><span class="lg-2">FORECASTING</span><span class="lg-3">variance</span><span class="lg-4">Unit economics</span><span class="lg-5">BOARD PACKS</span><span class="lg-6">cash flow</span>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ============ NUMBERS ============ -->
-  <!-- EDIT: your real numbers. Keep them short: a figure and a few words. -->
+  <!-- EDIT: your real numbers. Only publish what you can back up. -->
   <section class="stats" aria-label="At a glance">
     <div class="stat"><b>[8+]</b><span>years in finance</span></div>
     <div class="stat"><b>[6]</b><span>annual budgets delivered</span></div>
@@ -72,175 +127,123 @@
     <div class="stat"><b>[5k+]</b><span>analysts reading my notes</span></div>
   </section>
 
-  <!-- ============ MARQUEE ============ -->
-  <!-- EDIT: the words that scroll past (each row repeats its list) -->
-  <section class="marquee" aria-label="Focus areas">
-    <div class="marquee-row" data-velocity="55"><div class="marquee-track"><span>Budgeting <i>✦</i> Forecasting <i>✦</i> Variance analysis <i>✦</i> Board reporting <i>✦</i> </span></div></div>
-    <div class="marquee-row alt" data-velocity="45"><div class="marquee-track"><span>Driver-based models <i>✦</i> Unit economics <i>✦</i> Cash flow <i>✦</i> KPI design <i>✦</i> </span></div></div>
-  </section>
-
-  <!-- ============ ABOUT ============ -->
-  <section id="about" class="section about">
-    <h2><span class="num">01</span> About</h2>
-    <div class="about-grid">
-      <!-- EDIT: your story, in your own words -->
-      <div class="prose">
-        <p>I work in <strong>financial planning &amp; analysis</strong>: the part of finance that looks forward. I build the budget, keep the forecast honest, and explain what moved and why, so leaders can act on it.</p>
-        <p>What I care about most is clarity. A model nobody trusts is worthless, and a slide nobody understands is noise. I like models that reconcile, numbers that tie, and a story that a busy executive can read in thirty seconds.</p>
-        <p>Outside the spreadsheet, I write about FP&amp;A craft: practical cheat-codes for analysts who want to think like owners.</p>
-      </div>
-      <aside class="card facts">
-        <h3>Quick facts</h3>
-        <dl>
-          <!-- EDIT: replace the bracketed values -->
-          <dt>Based in</dt><dd>[City, Country]</dd>
-          <dt>Focus</dt><dd>FP&amp;A · budgeting · forecasting</dd>
-          <dt>Industry</dt><dd>[e.g. e-commerce, SaaS]</dd>
-          <dt>Languages</dt><dd>[Arabic, English]</dd>
-        </dl>
-      </aside>
+  <!-- ============ WORK ============ -->
+  <section id="work" class="work">
+    <header class="section-head">
+      <p class="eyebrow">Selected work</p>
+      <h2>Models and reviews, built to be used</h2>
+    </header>
+    <!-- EDIT: retitle these with your own projects (keep company names out unless you may share them) -->
+    <div class="work-grid">
+      <a class="case" href="#contact">
+        <figure class="case-art a-cream">
+          <svg viewBox="0 0 640 400" aria-hidden="true">
+            <path class="axis" d="M60 330H600" />
+            <rect x="80" y="150" width="62" height="180" fill="#1F2B5C" />
+            <rect x="170" y="100" width="62" height="50" fill="#18493C" />
+            <rect x="260" y="70" width="62" height="30" fill="#18493C" />
+            <rect x="350" y="70" width="62" height="56" fill="#B23A26" />
+            <rect x="440" y="126" width="62" height="22" fill="#B23A26" />
+            <rect x="530" y="148" width="62" height="182" fill="#E3A62B" />
+            <path class="link" d="M142 150H170M232 100H260M322 70H350M412 126H440M502 148H530" />
+          </svg>
+        </figure>
+        <figcaption><span>A net-impact waterfall for the monthly review</span><i aria-hidden="true">↗</i></figcaption>
+      </a>
+      <a class="case" href="#contact">
+        <figure class="case-art a-navy">
+          <svg viewBox="0 0 640 400" aria-hidden="true">
+            <g class="node"><rect x="40" y="60" width="140" height="56" rx="10" /><text x="110" y="94">Volume</text></g>
+            <g class="node"><rect x="40" y="172" width="140" height="56" rx="10" /><text x="110" y="206">Price</text></g>
+            <g class="node"><rect x="40" y="284" width="140" height="56" rx="10" /><text x="110" y="318">Headcount</text></g>
+            <g class="node hot"><rect x="260" y="172" width="120" height="56" rx="10" /><text x="320" y="206">P&amp;L</text></g>
+            <g class="node"><rect x="460" y="100" width="140" height="56" rx="10" /><text x="530" y="134">Balance sheet</text></g>
+            <g class="node"><rect x="460" y="244" width="140" height="56" rx="10" /><text x="530" y="278">Cash</text></g>
+            <path class="wire" d="M180 88C230 88 220 200 260 200M180 200H260M180 312C230 312 220 200 260 200M380 200C420 200 420 128 460 128M380 200C420 200 420 272 460 272M530 156V244" />
+          </svg>
+        </figure>
+        <figcaption><span>A driver-based budget model, from volume to cash</span><i aria-hidden="true">↗</i></figcaption>
+      </a>
+      <a class="case" href="#contact">
+        <figure class="case-art a-blush">
+          <svg viewBox="0 0 640 400" aria-hidden="true">
+            <g class="kpi"><rect x="40" y="50" width="270" height="140" rx="14" /><text class="k" x="64" y="92">REVENUE</text><text class="v" x="64" y="150">[$4.2M]</text><text class="d up" x="230" y="150">+4%</text></g>
+            <g class="kpi"><rect x="330" y="50" width="270" height="140" rx="14" /><text class="k" x="354" y="92">GROSS MARGIN</text><text class="v" x="354" y="150">[38%]</text><text class="d down" x="518" y="150">−1pt</text></g>
+            <g class="kpi"><rect x="40" y="210" width="560" height="140" rx="14" /><text class="k" x="64" y="252">VS BUDGET</text>
+              <path class="spark" d="M64 320L130 300L196 310L262 280L328 290L394 262L460 270L526 240L576 248" /></g>
+          </svg>
+        </figure>
+        <figcaption><span>A one-page KPI pack for leadership</span><i aria-hidden="true">↗</i></figcaption>
+      </a>
+      <a class="case" href="#contact">
+        <figure class="case-art a-sky">
+          <video autoplay muted loop playsinline preload="metadata" poster="assets/hero-poster.jpg" aria-label="A hand-painted cartoon: a small character waters bar-chart seedlings and they grow into a rising chart.">
+            <source src="assets/hero.mp4" type="video/mp4">
+          </video>
+        </figure>
+        <figcaption><span>Small seeds, compounding: a hand-painted short for this site</span><i aria-hidden="true">↗</i></figcaption>
+      </a>
     </div>
   </section>
 
-  <!-- ============ WHAT I DO ============ -->
-  <section id="work" class="section">
-    <h2><span class="num">02</span> What I do</h2>
-    <div class="bento">
-      <article class="card tile tile-big">
-        <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><path d="M8 40V26M18 40V18M28 40V22M38 40V9" /><path d="M6 41.5h37" /></svg>
-        </div>
-        <h3>Budgeting &amp; planning</h3>
-        <p>Annual budgets and rolling forecasts built driver-first, from volume and price down to the P&amp;L, balance sheet and cash. Every number traces back to an assumption someone owns.</p>
-        <svg class="mini-chart" viewBox="0 0 300 120" aria-hidden="true">
-          <path class="grid" d="M0 118H300" />
-          <rect x="14" y="78" width="40" height="40" rx="5" fill="#3A9C98" />
-          <rect x="84" y="60" width="40" height="58" rx="5" fill="#E8AA38" />
-          <rect x="154" y="40" width="40" height="78" rx="5" fill="#E27A92" />
-          <rect x="224" y="12" width="40" height="106" rx="5" fill="#D97757" />
-          <path class="trend" d="M20 62C80 52 130 40 180 26S240 4 270 -2" />
-        </svg>
-      </article>
-      <article class="card tile">
-        <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><path d="M6 34c8-2 10-14 18-14s10 8 18-10" /><path d="M36 8l6 2-2 6" /></svg>
-        </div>
-        <h3>Performance reviews</h3>
-        <p>Monthly variance analysis against budget, last year and last month, with the drivers behind the gap.</p>
-      </article>
-      <article class="card tile">
-        <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="24" rx="3" /><path d="M14 40h20M24 33v7M13 25l7-7 6 5 9-9" /></svg>
-        </div>
-        <h3>Board-ready reporting</h3>
-        <p>Decks with a clear headline on every slide: what happened, why it matters, what to decide.</p>
-      </article>
-      <article class="card tile tile-wide">
-        <div class="icon" aria-hidden="true">
-          <svg viewBox="0 0 48 48"><path d="M10 38l4-12L34 6l8 8-20 20z" /><path d="M30 10l8 8M10 38l12-4" /></svg>
-        </div>
-        <div>
-          <h3>Writing &amp; teaching</h3>
-          <p>Short, practical notes on financial modeling and FP&amp;A craft, for analysts growing into business partners.</p>
-        </div>
-      </article>
-      <article class="card tile tile-tools">
-        <h3>Toolkit</h3>
-        <!-- EDIT: the tools you actually use -->
-        <ul class="tags">
-          <li>Excel</li><li>PowerPoint</li><li>[Power BI]</li><li>[SQL]</li><li>[ERP]</li>
-        </ul>
-      </article>
-    </div>
+  <!-- ============ TESTIMONIAL ============ -->
+  <!-- EDIT: a real quote, with permission -->
+  <section class="quote-band" aria-label="What people say">
+    <figure>
+      <blockquote>"[A sentence or two from a manager or colleague: the problem you solved, and what working with you was like. Specific beats glowing.]"</blockquote>
+      <figcaption><span class="rule" aria-hidden="true"></span><span><b>[Name]</b><br>[Title, Company]</span></figcaption>
+    </figure>
   </section>
 
-  <!-- ============ EXPERIENCE ============ -->
-  <section id="experience" class="section">
-    <h2><span class="num">03</span> Experience</h2>
-    <!-- EDIT: one <li> per role, newest first -->
-    <ol class="timeline">
-      <li>
-        <span class="when">[2023 – now]</span>
-        <h3>[Your role] · [Company]</h3>
-        <p>[One or two lines on the scope and the result you're proudest of, e.g. "Own the annual budget model and the monthly performance review for the leadership team."]</p>
-      </li>
-      <li>
-        <span class="when">[2020 – 2023]</span>
-        <h3>[Previous role] · [Company]</h3>
-        <p>[What you built, improved or delivered there.]</p>
-      </li>
-      <li>
-        <span class="when">[Year]</span>
-        <h3>[Degree or certification] · [School]</h3>
-        <p>[Optional: CMA, CFA, ACCA, a master's, etc.]</p>
-      </li>
+  <!-- ============ SERVICES ============ -->
+  <section id="services" class="services">
+    <header class="section-head">
+      <p class="eyebrow">Services</p>
+      <h2>What I can take off your plate</h2>
+    </header>
+    <ol class="service-list">
+      <li><span class="n">01</span><h3>Budgeting and planning</h3><p>Annual budgets and rolling forecasts built driver-first, from volume and price down to the P&amp;L, balance sheet and cash.</p></li>
+      <li><span class="n">02</span><h3>Monthly performance reviews</h3><p>Actuals against budget, last year and last month, with the drivers behind each gap and what to do about it.</p></li>
+      <li><span class="n">03</span><h3>Board and leadership reporting</h3><p>Decks and KPI packs with one clear headline per slide: what happened, why it matters, what to decide.</p></li>
+      <li><span class="n">04</span><h3>Model reviews</h3><p>A second pair of eyes on a model before it goes out: the checks, the links, the sign conventions.</p></li>
     </ol>
   </section>
 
-  <!-- ============ KIND WORDS ============ -->
-  <section id="words" class="section">
-    <h2><span class="num">04</span> Kind words</h2>
-    <!-- EDIT: real quotes from managers, colleagues or clients (ask first, use their name and title) -->
-    <div class="quotes">
-      <figure class="card quote">
-        <blockquote>"[A sentence or two from someone you've worked with about what it's like to work with you: the problem you solved and how it felt.]"</blockquote>
-        <figcaption><span class="avatar small" aria-hidden="true">AB</span><span><b>[Name]</b><br>[Title, Company]</span></figcaption>
-      </figure>
-      <figure class="card quote">
-        <blockquote>"[Another short quote. Specific beats glowing: 'Her monthly review was the first one our CEO read end to end.']"</blockquote>
-        <figcaption><span class="avatar small" aria-hidden="true">CD</span><span><b>[Name]</b><br>[Title, Company]</span></figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ============ WRITING ============ -->
-  <section id="writing" class="section">
-    <h2><span class="num">05</span> Writing</h2>
-    <p class="section-lede">Notes from the finance desk. I post most of them on LinkedIn.</p>
-    <!-- EDIT: link each card to a real post -->
-    <div class="posts">
-      <a class="post card" href="#">
-        <span class="note">cheat-code</span>
-        <h3>The three checks every model needs before it leaves your laptop</h3>
-        <p>Does it tie, does it roll, and would a stranger understand it?</p>
-      </a>
-      <a class="post card" href="#">
-        <span class="note">forecasting</span>
-        <h3>Driver-based forecasts, explained with one coffee shop</h3>
-        <p>Volume times price, minus what it costs to serve. Everything else is detail.</p>
-      </a>
-      <a class="post card" href="#">
-        <span class="note">storytelling</span>
-        <h3>Write the slide title first</h3>
-        <p>If the headline doesn't say the answer, the chart below it won't either.</p>
-      </a>
-    </div>
-    <div class="follow">
-      <p>New notes most weeks. Follow along so you don't miss one.</p>
-      <!-- EDIT: your LinkedIn URL -->
-      <a class="btn" href="https://www.linkedin.com/in/[your-handle]" rel="noopener">Follow on LinkedIn</a>
-    </div>
+  <!-- ============ NOTES ============ -->
+  <section id="notes" class="notes">
+    <header class="section-head">
+      <p class="eyebrow">Notes</p>
+      <h2>The cheat-code series</h2>
+      <p>Short lessons from the finance desk. Most of them start life on LinkedIn.</p>
+    </header>
+    <!-- EDIT: link each row to a real post -->
+    <ul class="note-list">
+      <li><a href="#"><span class="tag">Modelling</span><b>The three checks every model needs before it leaves your laptop</b><i aria-hidden="true">↗</i></a></li>
+      <li><a href="#"><span class="tag">Forecasting</span><b>Driver-based forecasts, explained with one coffee shop</b><i aria-hidden="true">↗</i></a></li>
+      <li><a href="#"><span class="tag">Storytelling</span><b>Write the slide title first</b><i aria-hidden="true">↗</i></a></li>
+    </ul>
+    <!-- EDIT: your LinkedIn URL -->
+    <a class="btn ghost" href="https://www.linkedin.com/in/[your-handle]" rel="noopener">Follow on LinkedIn</a>
   </section>
 
   <!-- ============ CONTACT ============ -->
-  <section id="contact" class="section contact">
-    <div class="card contact-card">
-      <h2>Let's talk numbers</h2>
-      <p>Open to FP&amp;A roles, advisory work, speaking and a good finance conversation.</p>
-      <div class="cta">
-        <!-- EDIT: put in your real links -->
-        <a class="btn" href="mailto:[your-email]">Email me</a>
-        <a class="btn ghost" href="https://www.linkedin.com/in/[your-handle]" rel="noopener">LinkedIn</a>
-        <a class="btn ghost" href="https://github.com/raghdamedhatali-97" rel="noopener">GitHub</a>
-      </div>
+  <section id="contact" class="contact">
+    <p class="eyebrow">Contact</p>
+    <p class="statement">Building next year's budget, or explaining last month's numbers? Let's talk about it.</p>
+    <div class="cta">
+      <!-- EDIT: your real links -->
+      <a class="btn" href="mailto:[your-email]">Email me</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/[your-handle]" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://github.com/raghdamedhatali-97" rel="noopener">GitHub</a>
     </div>
   </section>
 
 </main>
 
 <footer class="foot">
+  <img src="assets/brand/wordmark.svg" alt="Raghda Medhat Ali, The FP&amp;A Engineer" width="252" height="45">
   <p>© <span id="year">2026</span> Raghda Medhat Ali</p>
-  <p class="small">Hero animation hand-painted in code with <a href="https://github.com/JohnHeibel/ClaudeAnimationBase" rel="noopener">ClaudeAnimationBase</a> and p5.brush. Motion by <a href="https://gsap.com" rel="noopener">GSAP</a>, <a href="https://github.com/darkroomengineering/lenis" rel="noopener">Lenis</a> and effects from <a href="https://github.com/DavidHDev/react-bits" rel="noopener">React Bits</a>.</p>
+  <p class="small">Painted short made with <a href="https://github.com/JohnHeibel/ClaudeAnimationBase" rel="noopener">ClaudeAnimationBase</a>. Motion by <a href="https://gsap.com" rel="noopener">GSAP</a> and <a href="https://github.com/darkroomengineering/lenis" rel="noopener">Lenis</a>, with effects from <a href="https://github.com/DavidHDev/react-bits" rel="noopener">React Bits</a>.</p>
 </footer>
 
 <script src="vendor/gsap.min.js"></script>

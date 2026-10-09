@@ -1,10 +1,9 @@
 # Personal Brand Website
 
-Raghda Medhat Ali's personal website: a single static page on warm paper, with a **hand-painted, looping hero animation** made in code.
+Raghda Medhat Ali's personal website, branded as **The FP&A Engineer**: an editorial single page (ivory, big serif type, a moving wall of FP&A cheat-code cards), with a hand-painted animation made in code.
 
 The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT): Clawd, a character kit for [p5.js](https://p5js.org) and [p5.brush](https://github.com/acamposuribe/p5.brush), and a headless renderer that turns a scene into an MP4. This repo recreates that kit and adds the website on top of it.
 
-![The hero animation](site/assets/hero-poster.jpg)
 
 ## What's here
 
@@ -12,8 +11,11 @@ The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/Clau
 |---|---|
 | [site/](site/) | **The website.** Plain HTML and CSS, no build step. This folder is what gets published. |
 | [site/index.html](site/index.html) | All the page content. Search for `EDIT:` to find what to personalise. |
-| [site/styles.css](site/styles.css) | The look: paper, ink and clay, matching the animation's palette. |
-| [site/assets/](site/assets/) | The rendered hero video, its poster frame and the favicon. |
+| [site/styles.css](site/styles.css) | The look, built from the brand tokens in BRAND.md. |
+| [BRAND.md](BRAND.md) | **The brand identity**: positioning, logo, colour, type, imagery, voice and how to apply it to LinkedIn, slides and email. |
+| [site/brand.html](site/brand.html) | A one-page visual brand board (open `/brand.html` on the site). |
+| [site/assets/brand/](site/assets/brand/) | Logo files: mark, reversed mark and wordmark (SVG). |
+| [site/assets/](site/assets/) | The painted video, its poster frame and the favicon. |
 | [site/effects.js](site/effects.js) | All the page motion: GSAP intro and scroll effects, Lenis smooth scrolling, and vanilla ports of React Bits' SplitText, CountUp, ScrollVelocity and Magnet. |
 | [site/vendor/](site/vendor/) | GSAP (+ ScrollTrigger, SplitText) and Lenis, copied from npm by `npm run vendor`, so the site needs no CDN. |
 | [tools/deslop.py](tools/deslop.py) | SlopMonster's copy checker. `npm run slop` scores the site's text for AI-writing tells; GitHub runs it on every push. |
@@ -32,9 +34,9 @@ The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/Clau
 
 ## Motion and copy checks
 
-- **GSAP** ([greensock/GSAP](https://github.com/greensock/GSAP)) runs the hero intro, letter-by-letter headings, staggered cards, the growing mini chart and the hero parallax.
+- **GSAP** ([greensock/GSAP](https://github.com/greensock/GSAP)) runs the headline intro, the drifting card-wall columns, word-by-word statements, staggered blocks and the work illustrations drawing themselves.
 - **Lenis** ([darkroomengineering/lenis](https://github.com/darkroomengineering/lenis)) gives the page smooth scrolling, synced with GSAP's ScrollTrigger.
-- **React Bits** ([DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)) components are React, and this site is plain HTML, so `effects.js` ports four of them to vanilla JS with GSAP: SplitText (headings), CountUp (the numbers strip), ScrollVelocity (the scrolling marquee) and Magnet (buttons). Their licence notice is kept at the top of the file.
+- **React Bits** ([DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)) components are React, and this site is plain HTML, so `effects.js` ports four of them to vanilla JS with GSAP: SplitText (headlines), CountUp (the numbers strip), ScrollVelocity (the disciplines strip and card wall speed) and Magnet (buttons). Their licence notice is kept at the top of the file.
 - **SlopMonster** ([ItsssssJack/SlopMonster](https://github.com/ItsssssJack/SlopMonster)) checks the visible copy for AI-writing patterns. Run `npm run slop` after editing the text.
 
 Visitors who turn on "reduce motion" get the plain, static page.

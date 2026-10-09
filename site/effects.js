@@ -1,5 +1,5 @@
 // effects.js: motion for the site, built on GSAP (+ ScrollTrigger, SplitText) and Lenis smooth scrolling.
-// The text reveal, count-up, scroll-velocity marquee and magnet buttons are vanilla ports of React Bits components
+// The text reveal, count-up, scroll-velocity strip and magnet buttons are vanilla ports of React Bits components
 // (https://github.com/DavidHDev/react-bits): SplitText, CountUp, ScrollVelocity and Magnet.
 //   React Bits: Copyright (c) 2026 David Haz. MIT + Commons Clause License Condition v1.0. Permission is hereby granted,
 //   free of charge, to any person obtaining a copy of this software and associated documentation files (the
@@ -35,54 +35,44 @@
   });
 
   document.fonts.ready.then(() => {
-    // ---------- hero intro ----------
-    const name = new SplitText('.hero h1', { type: 'lines,chars', mask: 'lines' });
-    const lede = new SplitText('.lede', { type: 'lines', mask: 'lines' });
-    gsap.set('.hero-text, .hero-art', { autoAlpha: 1 });
-    gsap.timeline({ defaults: { ease: 'power3.out' } })
-      .from('.hello > *', { autoAlpha: 0, y: 14, scale: .8, stagger: .08, duration: .6, ease: 'back.out(2)' })
-      .from(name.chars, { yPercent: 110, rotate: 6, duration: .9, stagger: .025 }, '-=.3')
-      .from(lede.lines, { yPercent: 100, duration: .8, stagger: .08 }, '-=.6')
-      .to('.lede em', { backgroundSize: '100% 100%', duration: .6, ease: 'power2.inOut' }, '-=.2')
-      .from('.hero .cta .btn', { autoAlpha: 0, y: 20, stagger: .08, duration: .6 }, '-=.6')
-      .from('.hero .tags li', { autoAlpha: 0, y: 12, stagger: .04, duration: .4 }, '-=.4')
-      .from('.hero-art video', { autoAlpha: 0, scale: .9, rotate: -5, duration: 1.1, ease: 'back.out(1.4)' }, .25)
-      .from('.hero-art figcaption', { autoAlpha: 0, x: 20, rotate: 4, duration: .6 }, '-=.4');
+    // ---------- hero intro: the headline rises word by word, the badge rolls in ----------
+    const head = new SplitText('.hero h1', { type: 'lines,words', mask: 'lines' });
+    gsap.set('.hero h1, .badge', { autoAlpha: 1 });
+    gsap.timeline({ defaults: { ease: 'power4.out' } })
+      .from(head.words, { yPercent: 110, duration: 1.1, stagger: .07 })
+      .from('.badge', { autoAlpha: 0, scale: .6, rotate: -90, duration: 1, ease: 'back.out(1.6)' }, '-=.7')
+      .from('.wall .col', { yPercent: 18, autoAlpha: 0, duration: 1.2, stagger: { each: .06, from: 'center' } }, '-=.9');
 
-    // the painting drifts slower than the page, and leans toward the pointer
-    gsap.to('.hero-art', { yPercent: 12, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
-    if (fine) {
-      const art = document.querySelector('.hero-art video');
-      const rx = gsap.quickTo(art, 'x', { duration: .8, ease: 'power3' }), ry = gsap.quickTo(art, 'y', { duration: .8, ease: 'power3' });
-      const rr = gsap.quickTo(art, 'rotation', { duration: .8, ease: 'power3' });
-      document.querySelector('.hero').addEventListener('pointermove', e => {
-        const r = art.getBoundingClientRect(), dx = (e.clientX - (r.left + r.width / 2)) / innerWidth, dy = (e.clientY - (r.top + r.height / 2)) / innerHeight;
-        rx(dx * 24); ry(dy * 18); rr(.8 + dx * 3);
-      });
-    }
-
-    // ---------- SplitText (React Bits): section titles rise in letter by letter ----------
-    document.querySelectorAll('.section h2').forEach(h => {
-      const split = new SplitText(h, { type: 'words,chars' });
-      gsap.from(split.chars, { opacity: 0, y: 40, duration: 1.25, ease: 'power3.out', stagger: .03,
-        scrollTrigger: { trigger: h, start: 'top 90%', once: true } });
+    // ---------- card wall: each column drifts on its own loop, alternating up and down ----------
+    gsap.utils.toArray('.wall .col').forEach((col, i) => {
+      [...col.children].forEach(c => col.appendChild(c.cloneNode(true)).setAttribute('aria-hidden', 'true'));
+      const dir = i % 2 ? 1 : -1, half = () => (col.scrollHeight + parseFloat(getComputedStyle(col).rowGap || 0)) / 2;   // one set plus one gap: a seamless loop
+      const tween = gsap.fromTo(col, { y: dir < 0 ? 0 : () => -half() }, { y: dir < 0 ? () => -half() : 0, duration: 38 + (i % 3) * 7, ease: 'none', repeat: -1, invalidateOnRefresh: true });
+      // scrolling the page nudges the wall along, like ScrollVelocity
+      if (lenis) lenis.on('scroll', ({ velocity }) => tween.timeScale(1 + Math.min(4, Math.abs(velocity) * .25)));
+      col.addEventListener('pointerenter', () => gsap.to(tween, { timeScale: .15, duration: .5 }));
+      col.addEventListener('pointerleave', () => gsap.to(tween, { timeScale: 1, duration: .5 }));
     });
 
-    // ---------- cards and blocks arrive in a staggered wave ----------
-    gsap.set('.section .card, .timeline li, .prose p, .section-lede, .follow', { autoAlpha: 0, y: 40 });
-    ScrollTrigger.batch('.section .card, .timeline li, .prose p, .section-lede, .follow', {
-      start: 'top 88%', once: true,
-      onEnter: els => gsap.to(els, { autoAlpha: 1, y: 0, duration: .9, ease: 'power3.out', stagger: .1 })
+    // ---------- SplitText (React Bits): statements and section titles rise in word by word ----------
+    document.querySelectorAll('.statement, .section-head h2, .quote-band blockquote').forEach(el => {
+      const split = new SplitText(el, { type: 'lines,words', mask: 'lines' });
+      gsap.from(split.words, { yPercent: 100, duration: 1, ease: 'power3.out', stagger: .025,
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
     });
 
-    // the budgeting tile's bars grow on their beat, then the trend line draws across
-    const bars = gsap.utils.toArray('.mini-chart rect');
-    if (bars.length) {
-      const trend = document.querySelector('.mini-chart .trend');
-      gsap.timeline({ scrollTrigger: { trigger: '.mini-chart', start: 'top 85%', once: true } })
-        .from(bars, { scaleY: 0, transformOrigin: '50% 100%', duration: .8, ease: 'back.out(1.8)', stagger: .15 })
-        .from(trend, { opacity: 0, x: -20, duration: .6, ease: 'power2.out' }, '-=.3');
-    }
+    // ---------- blocks arrive in a staggered wave ----------
+    const wave = '.partner-side > *, .case, .service-list li, .note-list li, .section-head .eyebrow, .section-head p, .quote-band figcaption, .contact .cta';
+    gsap.set(wave, { autoAlpha: 0, y: 36 });
+    ScrollTrigger.batch(wave, { start: 'top 90%', once: true,
+      onEnter: els => gsap.to(els, { autoAlpha: 1, y: 0, duration: .9, ease: 'power3.out', stagger: .08 }) });
+
+    // the work illustrations draw themselves when they arrive
+    gsap.utils.toArray('.a-cream rect').forEach((r, i) => gsap.from(r, { scaleY: 0, transformOrigin: '50% 100%', duration: .7, ease: 'back.out(1.6)', delay: i * .1,
+      scrollTrigger: { trigger: '.a-cream', start: 'top 80%', once: true } }));
+    gsap.from('.node', { autoAlpha: 0, scale: .8, transformOrigin: '50% 50%', duration: .6, stagger: .08, ease: 'back.out(2)', scrollTrigger: { trigger: '.a-navy', start: 'top 80%', once: true } });
+    const spark = document.querySelector('.spark');
+    if (spark) { const len = spark.getTotalLength(); gsap.fromTo(spark, { strokeDasharray: len, strokeDashoffset: len }, { strokeDashoffset: 0, duration: 1.6, ease: 'power2.inOut', scrollTrigger: { trigger: '.a-blush', start: 'top 80%', once: true } }); }
 
     // ---------- CountUp (React Bits): the numbers tick up when they scroll into view ----------
     document.querySelectorAll('.stat b').forEach(b => {
@@ -93,24 +83,23 @@
       gsap.to(o, { v: target, duration: 2, ease: 'power2.out', onUpdate: () => { b.textContent = fmt(o.v); },
         scrollTrigger: { trigger: b, start: 'top 90%', once: true } });
     });
-    gsap.from('.stats', { autoAlpha: 0, y: 40, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: '.stats', start: 'top 92%', once: true } });
 
     ScrollTrigger.refresh();
   });
 
-  // ---------- ScrollVelocity (React Bits): marquee rows that speed up and flip with the scroll ----------
-  document.querySelectorAll('.marquee-row').forEach((row, i) => {
-    const track = row.querySelector('.marquee-track'), copy = track.firstElementChild;
-    for (let k = 0; k < 5; k++) track.appendChild(copy.cloneNode(true)).setAttribute('aria-hidden', 'true');
-    const base = (+row.dataset.velocity || 60) * (i % 2 ? -1 : 1), setX = gsap.quickSetter(track, 'x', 'px');
+  // ---------- ScrollVelocity (React Bits): the disciplines strip drifts, faster when the page scrolls ----------
+  document.querySelectorAll('.logos-track').forEach(track => {
+    const n = track.children.length;
+    for (let k = 0; k < n; k++) track.appendChild(track.children[k].cloneNode(true)).setAttribute('aria-hidden', 'true');
+    const setX = gsap.quickSetter(track, 'x', 'px'), base = 40;
     let x = 0, dirF = 1, vel = 0;
     gsap.ticker.add((_, dt) => {
-      const w = copy.offsetWidth; if (!w) return;
+      const w = track.scrollWidth / 2; if (!w) return;
       const raw = lenis ? lenis.velocity * 60 : 0;            // px/s, like motion's useVelocity(scrollY)
       vel += (raw - vel) * .12;                                // spring-ish smoothing
       const factor = vel / 1000 * 5;                           // velocityMapping { input: [0, 1000], output: [0, 5] }
       if (factor < 0) dirF = -1; else if (factor > 0) dirF = 1;
-      x += dirF * base * (dt / 1000) * (1 + Math.abs(factor));
+      x -= dirF * base * (dt / 1000) * (1 + Math.abs(factor));
       x = gsap.utils.wrap(-w, 0, x);
       setX(x);
     });

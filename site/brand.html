@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brand board · The FP&amp;A Engineer</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .board { padding: 56px var(--gutter) 80px; display: grid; gap: 56px; }
+  .board h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1; }
+  .board h2 { font-size: 1.9rem; margin: 10px 0 22px; }
+  .lede { max-width: 60ch; color: var(--mist); margin-top: 16px; font-size: 1.1rem; }
+  .logos-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: stretch; }
+  .logo-card { border: 1px solid var(--rule); border-radius: 12px; padding: 28px; display: grid; place-items: center; min-width: 160px; }
+  .logo-card.dark { background: var(--navy); border-color: var(--navy); }
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .sw { border-radius: 12px; overflow: hidden; border: 1px solid var(--rule); }
+  .sw i { display: block; height: 96px; }
+  .sw p { padding: 10px 12px; font: 500 .78rem/1.5 var(--mono); letter-spacing: .04em; }
+  .sw p b { display: block; font: 600 .9rem var(--sans); letter-spacing: 0; }
+  .type { display: grid; gap: 18px; }
+  .type div { border-top: 1px solid var(--rule); padding-top: 16px; display: grid; grid-template-columns: 200px 1fr; gap: 20px; align-items: baseline; }
+  .type .lbl { font: 500 .75rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--mist); }
+  .voice { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .voice div { background: #fff; border: 1px solid var(--rule); border-radius: 12px; padding: 20px; }
+  .voice b { font: 500 .75rem var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--coral); }
+  .voice p { font: 400 1.25rem/1.35 var(--serif); margin-top: 8px; }
+  .chart { display: flex; gap: 22px; flex-wrap: wrap; }
+  .chart span { display: inline-flex; align-items: center; gap: 8px; font-size: .95rem; }
+  .chart span i { width: 18px; height: 18px; border-radius: 4px; }
+  @media (max-width: 640px) { .type div { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<main class="board">
+  <header>
+    <p class="eyebrow">Brand board</p>
+    <h1>The FP&amp;A Engineer</h1>
+    <p class="lede">Finance planning built the way engineers build things: tested, traceable and made to be used. Personality: precise, warm, curious, calm under deadline. Full guide in BRAND.md.</p>
+  </header>
+
+  <section>
+    <p class="eyebrow">01 · Logo</p>
+    <h2>A selected cell: navy square, serif R, gold cursor</h2>
+    <div class="logos-row">
+      <div class="logo-card"><img src="assets/brand/mark.svg" alt="Mark" width="96" height="96"></div>
+      <div class="logo-card dark"><img src="assets/brand/mark-reversed.svg" alt="Mark, reversed" width="96" height="96"></div>
+      <div class="logo-card"><img src="assets/brand/wordmark.svg" alt="Wordmark" width="360" height="64"></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">02 · Colour</p>
+    <h2>Quiet base, colour in blocks</h2>
+    <div class="swatches">
+      <div class="sw"><i style="background:#FAF8F4"></i><p><b>Ivory</b>#FAF8F4 · page</p></div>
+      <div class="sw"><i style="background:#14182B"></i><p><b>Ink</b>#14182B · text</p></div>
+      <div class="sw"><i style="background:#1F2B5C"></i><p><b>Ledger Navy</b>#1F2B5C · primary</p></div>
+      <div class="sw"><i style="background:#18493C"></i><p><b>Growth Green</b>#18493C · favourable</p></div>
+      <div class="sw"><i style="background:#E3A62B"></i><p><b>Signal Gold</b>#E3A62B · accent</p></div>
+      <div class="sw"><i style="background:#B23A26"></i><p><b>Variance Coral</b>#B23A26 · adverse</p></div>
+      <div class="sw"><i style="background:#FFD8C4"></i><p><b>Peach</b>#FFD8C4 · quotes</p></div>
+      <div class="sw"><i style="background:#F8CED4"></i><p><b>Blush</b>#F8CED4</p></div>
+      <div class="sw"><i style="background:#D2E2F3"></i><p><b>Sky</b>#D2E2F3</p></div>
+      <div class="sw"><i style="background:#F7EFE2"></i><p><b>Cream</b>#F7EFE2</p></div>
+    </div>
+    <div class="chart" style="margin-top:22px">
+      <span><i style="background:#1F2B5C"></i>Actual</span><span><i style="background:#E3A62B"></i>Budget</span>
+      <span><i style="background:#18493C"></i>Favourable</span><span><i style="background:#B23A26"></i>Adverse</span>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">03 · Type</p>
+    <h2>Editorial serif, plain sans, engineer's mono</h2>
+    <div class="type">
+      <div><span class="lbl">Newsreader · display</span><span style="font:400 clamp(2.2rem,5vw,3.8rem)/1.05 var(--serif);letter-spacing:-.02em">Numbers engineered for better decisions</span></div>
+      <div><span class="lbl">Inter · body</span><span>Annual budgets and rolling forecasts built driver-first, from volume and price down to the P&amp;L, balance sheet and cash.</span></div>
+      <div><span class="lbl">JetBrains Mono · labels</span><span class="eyebrow">Variance to drivers · 2026 budget · +4.2%</span></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">04 · Pattern</p>
+    <h2>The card wall</h2>
+    <div class="wall" style="height:340px;-webkit-mask-image:none;mask-image:none;grid-template-columns:repeat(6,1fr)">
+      <div class="col" style="margin:0"><div class="tile t-green"><span class="shape penta mint"></span><h4>Does it tie?</h4><small>cheat-code</small></div></div>
+      <div class="col" style="margin:0"><div class="tile t-blush"><p>Colour your inputs blue. Hardcodes hide in plain sight.</p></div></div>
+      <div class="col" style="margin:0"><div class="tile t-gold"><span class="shape tri cream"></span><h4 class="dark">Budget season</h4><small class="dark">cheat-code</small></div></div>
+      <div class="col" style="margin:0"><div class="tile t-sky"><span class="shape pill rose"></span><p>Volume times price, minus the cost to serve.</p></div></div>
+      <div class="col" style="margin:0"><div class="tile t-navy"><span class="shape half sky"></span><h4>Rolling forecast</h4><small>cheat-code</small></div></div>
+      <div class="col" style="margin:0"><div class="tile t-coral"><span class="shape diamond peach"></span><h4>Actual minus budget</h4><small>cheat-code</small></div></div>
+    </div>
+  </section>
+
+  <section>
+    <p class="eyebrow">05 · Voice</p>
+    <h2>Plain, exact, kind</h2>
+    <div class="voice">
+      <div><b>Website</b><p>Budgets that hold up when the year doesn't.</p></div>
+      <div><b>LinkedIn</b><p>Colour your inputs blue. Hardcodes hide in plain sight.</p></div>
+      <div><b>Board slide</b><p>Revenue is 4% ahead of budget; marketing spend explains half.</p></div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
