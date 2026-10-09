@@ -24,6 +24,7 @@
     <a href="#about">About</a>
     <a href="#work">What I do</a>
     <a href="#experience">Experience</a>
+    <a href="#words">Kind words</a>
     <a href="#writing">Writing</a>
     <a class="btn small" href="#contact">Say hello</a>
   </nav>
@@ -34,7 +35,12 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="hero-text">
-      <p class="note">hi, I'm</p>
+      <div class="hello">
+        <!-- EDIT: put your photo at site/assets/photo.jpg and swap the initials for: <img src="assets/photo.jpg" alt="Raghda Medhat Ali"> -->
+        <span class="avatar" aria-hidden="true">RM</span>
+        <p class="note">hi, I'm</p>
+        <span class="status"><i></i> Open to new opportunities</span>
+      </div>
       <h1>Raghda Medhat Ali</h1>
       <!-- EDIT: your one-line positioning -->
       <p class="lede">I help businesses <em>grow on purpose</em>: budgets, forecasts and performance stories that turn numbers into decisions.</p>
@@ -52,6 +58,15 @@
       </video>
       <figcaption class="note">small seeds, compounding</figcaption>
     </figure>
+  </section>
+
+  <!-- ============ NUMBERS ============ -->
+  <!-- EDIT: your real numbers. Keep them short: a figure and a few words. -->
+  <section class="stats" aria-label="At a glance">
+    <div class="stat"><b>[8+]</b><span>years in finance</span></div>
+    <div class="stat"><b>[6]</b><span>annual budgets delivered</span></div>
+    <div class="stat"><b>[30+]</b><span>monthly reviews for leadership</span></div>
+    <div class="stat"><b>[5k+]</b><span>analysts reading my notes</span></div>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -80,34 +95,51 @@
   <!-- ============ WHAT I DO ============ -->
   <section id="work" class="section">
     <h2><span class="num">02</span> What I do</h2>
-    <div class="cards">
-      <article class="card">
+    <div class="bento">
+      <article class="card tile tile-big">
         <div class="icon" aria-hidden="true">
           <svg viewBox="0 0 48 48"><path d="M8 40V26M18 40V18M28 40V22M38 40V9" /><path d="M6 41.5h37" /></svg>
         </div>
         <h3>Budgeting &amp; planning</h3>
-        <p>Annual budgets and rolling forecasts built driver-first, from volume and price down to the P&amp;L, balance sheet and cash.</p>
+        <p>Annual budgets and rolling forecasts built driver-first, from volume and price down to the P&amp;L, balance sheet and cash. Every number traces back to an assumption someone owns.</p>
+        <svg class="mini-chart" viewBox="0 0 300 120" aria-hidden="true">
+          <path class="grid" d="M0 118H300" />
+          <rect x="14" y="78" width="40" height="40" rx="5" fill="#3A9C98" />
+          <rect x="84" y="60" width="40" height="58" rx="5" fill="#E8AA38" />
+          <rect x="154" y="40" width="40" height="78" rx="5" fill="#E27A92" />
+          <rect x="224" y="12" width="40" height="106" rx="5" fill="#D97757" />
+          <path class="trend" d="M20 62C80 52 130 40 180 26S240 4 270 -2" />
+        </svg>
       </article>
-      <article class="card">
+      <article class="card tile">
         <div class="icon" aria-hidden="true">
           <svg viewBox="0 0 48 48"><path d="M6 34c8-2 10-14 18-14s10 8 18-10" /><path d="M36 8l6 2-2 6" /></svg>
         </div>
         <h3>Performance reviews</h3>
-        <p>Monthly variance analysis against budget, last year and last month, with the drivers that explain the gap and what to do next.</p>
+        <p>Monthly variance analysis against budget, last year and last month, with the drivers behind the gap.</p>
       </article>
-      <article class="card">
+      <article class="card tile">
         <div class="icon" aria-hidden="true">
           <svg viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="24" rx="3" /><path d="M14 40h20M24 33v7M13 25l7-7 6 5 9-9" /></svg>
         </div>
         <h3>Board-ready reporting</h3>
-        <p>Executive decks and KPI packs with a clear headline on every slide: what happened, why it matters, and the decision it asks for.</p>
+        <p>Decks with a clear headline on every slide: what happened, why it matters, what to decide.</p>
       </article>
-      <article class="card">
+      <article class="card tile tile-wide">
         <div class="icon" aria-hidden="true">
           <svg viewBox="0 0 48 48"><path d="M10 38l4-12L34 6l8 8-20 20z" /><path d="M30 10l8 8M10 38l12-4" /></svg>
         </div>
-        <h3>Writing &amp; teaching</h3>
-        <p>Short, practical notes on financial modeling and FP&amp;A craft, for analysts growing into business partners.</p>
+        <div>
+          <h3>Writing &amp; teaching</h3>
+          <p>Short, practical notes on financial modeling and FP&amp;A craft, for analysts growing into business partners.</p>
+        </div>
+      </article>
+      <article class="card tile tile-tools">
+        <h3>Toolkit</h3>
+        <!-- EDIT: the tools you actually use -->
+        <ul class="tags">
+          <li>Excel</li><li>PowerPoint</li><li>[Power BI]</li><li>[SQL]</li><li>[ERP]</li>
+        </ul>
       </article>
     </div>
   </section>
@@ -135,9 +167,25 @@
     </ol>
   </section>
 
+  <!-- ============ KIND WORDS ============ -->
+  <section id="words" class="section">
+    <h2><span class="num">04</span> Kind words</h2>
+    <!-- EDIT: real quotes from managers, colleagues or clients (ask first, use their name and title) -->
+    <div class="quotes">
+      <figure class="card quote">
+        <blockquote>"[A sentence or two from someone you've worked with about what it's like to work with you: the problem you solved and how it felt.]"</blockquote>
+        <figcaption><span class="avatar small" aria-hidden="true">AB</span><span><b>[Name]</b><br>[Title, Company]</span></figcaption>
+      </figure>
+      <figure class="card quote">
+        <blockquote>"[Another short quote. Specific beats glowing: 'Her monthly review was the first one our CEO read end to end.']"</blockquote>
+        <figcaption><span class="avatar small" aria-hidden="true">CD</span><span><b>[Name]</b><br>[Title, Company]</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
   <!-- ============ WRITING ============ -->
   <section id="writing" class="section">
-    <h2><span class="num">04</span> Writing</h2>
+    <h2><span class="num">05</span> Writing</h2>
     <p class="section-lede">Notes from the finance desk. I post most of them on LinkedIn.</p>
     <!-- EDIT: link each card to a real post -->
     <div class="posts">
@@ -156,6 +204,11 @@
         <h3>Write the slide title first</h3>
         <p>If the headline doesn't say the answer, the chart below it won't either.</p>
       </a>
+    </div>
+    <div class="follow">
+      <p>New notes most weeks. Follow along so you don't miss one.</p>
+      <!-- EDIT: your LinkedIn URL -->
+      <a class="btn" href="https://www.linkedin.com/in/[your-handle]" rel="noopener">Follow on LinkedIn</a>
     </div>
   </section>
 
@@ -182,6 +235,11 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+  // Sections drift up into place as they scroll into view (skipped with reduced motion).
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
+    document.querySelectorAll('.section, .stats').forEach(el => { el.classList.add('reveal'); io.observe(el); });
+  }
   // Respect reduced motion: show the poster frame instead of the looping video.
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 </script>
