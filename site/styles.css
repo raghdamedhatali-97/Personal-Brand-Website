@@ -88,7 +88,7 @@ main > section { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
 }
 .hero h1 { margin-top: .1em; }
 .lede { font-size: 1.22rem; color: var(--ink-soft); max-width: 34ch; }
-.lede em { font-style: normal; color: var(--ink); background: linear-gradient(transparent 62%, color-mix(in srgb, var(--ochre) 55%, transparent) 62%); }
+.lede em { font-style: normal; color: var(--ink); background: linear-gradient(transparent 62%, color-mix(in srgb, var(--ochre) 55%, transparent) 62%) no-repeat 0 0 / 100% 100%; }
 .tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 8px; }
 .tags li { font-size: .82rem; font-weight: 500; padding: 4px 12px; border: 1.5px solid var(--line); border-radius: 999px; background: color-mix(in srgb, var(--cream) 60%, transparent); }
 
@@ -225,6 +225,20 @@ main > section { max-width: 1180px; margin: 0 auto; padding: 0 16px; }
 .follow { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-top: 26px; padding: 20px 26px; border: 2px dashed var(--ink); border-radius: var(--radius); }
 .follow p { margin: 0; font-weight: 500; }
 
-/* ---------- scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.2, .7, .2, 1); }
-.reveal.in { opacity: 1; transform: none; }
+/* ---------- motion (effects.js) ---------- */
+html.lenis { scroll-behavior: auto; }
+/* hide the hero until its intro timeline runs, so it never flashes in unstyled */
+.fx .hero-text, .fx .hero-art { visibility: hidden; }
+.fx .lede em { background-size: 0% 100%; }
+.nav { transition: transform .35s ease; }
+.nav.tucked { transform: translateY(-100%); }
+
+/* ---------- marquee (ScrollVelocity) ---------- */
+.marquee { max-width: none !important; padding: 0 !important; margin: 64px 0 0; overflow: hidden; }
+.marquee-row { overflow: hidden; padding: 14px 0; background: var(--clay); border-block: 2px solid var(--ink); transform: rotate(-1.2deg) scale(1.02); }
+.marquee-row.alt { background: var(--cream); transform: rotate(.8deg) scale(1.02); margin-top: -4px; }
+.marquee-track { display: flex; width: max-content; will-change: transform; }
+.marquee-track span { flex: none; white-space: pre; font: 700 clamp(1.4rem, 3vw, 2.2rem)/1.1 var(--serif); color: var(--cream); padding-right: .4em; }
+.marquee-row.alt .marquee-track span { color: var(--ink); }
+.marquee-track i { font-style: normal; color: var(--ochre); padding: 0 .35em; }
+.marquee-row.alt .marquee-track i { color: var(--clay); }

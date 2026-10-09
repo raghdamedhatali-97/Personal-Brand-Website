@@ -14,7 +14,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&family=Permanent+Marker&display=swap">
+<link rel="stylesheet" href="vendor/lenis.css">
 <link rel="stylesheet" href="styles.css">
+<!-- Motion is on unless the visitor prefers reduced motion; effects.js removes the class if anything fails to load. -->
+<script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('fx');</script>
 </head>
 <body>
 
@@ -67,6 +70,13 @@
     <div class="stat"><b>[6]</b><span>annual budgets delivered</span></div>
     <div class="stat"><b>[30+]</b><span>monthly reviews for leadership</span></div>
     <div class="stat"><b>[5k+]</b><span>analysts reading my notes</span></div>
+  </section>
+
+  <!-- ============ MARQUEE ============ -->
+  <!-- EDIT: the words that scroll past (each row repeats its list) -->
+  <section class="marquee" aria-label="Focus areas">
+    <div class="marquee-row" data-velocity="55"><div class="marquee-track"><span>Budgeting <i>✦</i> Forecasting <i>✦</i> Variance analysis <i>✦</i> Board reporting <i>✦</i> </span></div></div>
+    <div class="marquee-row alt" data-velocity="45"><div class="marquee-track"><span>Driver-based models <i>✦</i> Unit economics <i>✦</i> Cash flow <i>✦</i> KPI design <i>✦</i> </span></div></div>
   </section>
 
   <!-- ============ ABOUT ============ -->
@@ -230,16 +240,16 @@
 
 <footer class="foot">
   <p>© <span id="year">2026</span> Raghda Medhat Ali</p>
-  <p class="small">Hero animation hand-painted in code with <a href="https://github.com/JohnHeibel/ClaudeAnimationBase" rel="noopener">ClaudeAnimationBase</a> and p5.brush.</p>
+  <p class="small">Hero animation hand-painted in code with <a href="https://github.com/JohnHeibel/ClaudeAnimationBase" rel="noopener">ClaudeAnimationBase</a> and p5.brush. Motion by <a href="https://gsap.com" rel="noopener">GSAP</a>, <a href="https://github.com/darkroomengineering/lenis" rel="noopener">Lenis</a> and effects from <a href="https://github.com/DavidHDev/react-bits" rel="noopener">React Bits</a>.</p>
 </footer>
 
+<script src="vendor/gsap.min.js"></script>
+<script src="vendor/ScrollTrigger.min.js"></script>
+<script src="vendor/SplitText.min.js"></script>
+<script src="vendor/lenis.min.js"></script>
+<script src="effects.js"></script>
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  // Sections drift up into place as they scroll into view (skipped with reduced motion).
-  if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -10% 0px' });
-    document.querySelectorAll('.section, .stats').forEach(el => { el.classList.add('reveal'); io.observe(el); });
-  }
   // Respect reduced motion: show the poster frame instead of the looping video.
   if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('video').forEach(v => { v.removeAttribute('autoplay'); v.pause(); });
 </script>

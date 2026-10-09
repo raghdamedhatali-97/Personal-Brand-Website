@@ -14,6 +14,9 @@ The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/Clau
 | [site/index.html](site/index.html) | All the page content. Search for `EDIT:` to find what to personalise. |
 | [site/styles.css](site/styles.css) | The look: paper, ink and clay, matching the animation's palette. |
 | [site/assets/](site/assets/) | The rendered hero video, its poster frame and the favicon. |
+| [site/effects.js](site/effects.js) | All the page motion: GSAP intro and scroll effects, Lenis smooth scrolling, and vanilla ports of React Bits' SplitText, CountUp, ScrollVelocity and Magnet. |
+| [site/vendor/](site/vendor/) | GSAP (+ ScrollTrigger, SplitText) and Lenis, copied from npm by `npm run vendor`, so the site needs no CDN. |
+| [tools/deslop.py](tools/deslop.py) | SlopMonster's copy checker. `npm run slop` scores the site's text for AI-writing tells; GitHub runs it on every push. |
 | [src/scenes/hero.js](src/scenes/hero.js) | The hero animation, "Growing": Clawd waters bar-chart seedlings into a rising chart. Storyboard in [STORYBOARD.md](STORYBOARD.md). |
 | [ANIMATION_GUIDE.md](ANIMATION_GUIDE.md) | The kit's rules, workflow and full API, for making or changing animations. |
 | [src/](src/) | The animation engine: Clawd ([clawd.js](src/clawd.js)), painting and timing ([core.js](src/core.js)), shots ([timeline.js](src/timeline.js)) |
@@ -26,6 +29,15 @@ The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/Clau
 
 1. Open [site/index.html](site/index.html) and replace everything marked `EDIT:` and every `[bracketed placeholder]`: your story, experience, links and email.
 2. Preview it: `npm run site`, then open http://localhost:8080.
+
+## Motion and copy checks
+
+- **GSAP** ([greensock/GSAP](https://github.com/greensock/GSAP)) runs the hero intro, letter-by-letter headings, staggered cards, the growing mini chart and the hero parallax.
+- **Lenis** ([darkroomengineering/lenis](https://github.com/darkroomengineering/lenis)) gives the page smooth scrolling, synced with GSAP's ScrollTrigger.
+- **React Bits** ([DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)) components are React, and this site is plain HTML, so `effects.js` ports four of them to vanilla JS with GSAP: SplitText (headings), CountUp (the numbers strip), ScrollVelocity (the scrolling marquee) and Magnet (buttons). Their licence notice is kept at the top of the file.
+- **SlopMonster** ([ItsssssJack/SlopMonster](https://github.com/ItsssssJack/SlopMonster)) checks the visible copy for AI-writing patterns. Run `npm run slop` after editing the text.
+
+Visitors who turn on "reduce motion" get the plain, static page.
 
 ## Publish it (GitHub Pages)
 
@@ -55,4 +67,8 @@ This repo adds a `--lite` flag to the renderer (and `?lite` to studio.html). It 
 
 ## Credits
 
-Animation kit: [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) © 2026 John Heibel, MIT licence (see [LICENSE](LICENSE)). Built on p5.js and p5.brush.
+- Animation kit: [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) © 2026 John Heibel, MIT licence (see [LICENSE](LICENSE)). Built on p5.js and p5.brush.
+- [GSAP](https://gsap.com) © GreenSock, under its [standard no-charge licence](https://gsap.com/standard-license).
+- [Lenis](https://github.com/darkroomengineering/lenis) © darkroom.engineering, MIT licence.
+- Effects ported from [React Bits](https://github.com/DavidHDev/react-bits) © 2026 David Haz, MIT + Commons Clause (notice in site/effects.js).
+- Copy checker: [SlopMonster](https://github.com/ItsssssJack/SlopMonster) © 2026 Jack Roberts, MIT licence (tools/SLOPMONSTER_LICENSE).

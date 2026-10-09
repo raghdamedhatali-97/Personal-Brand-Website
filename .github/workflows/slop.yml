@@ -1,0 +1,20 @@
+# Checks the website's visible copy for AI-writing tells with SlopMonster (tools/deslop.py).
+# Fails below 5/5. If a flagged number is real and you can back it up, add --allow-proof.
+name: Copy check
+
+on:
+  push:
+    paths: ['site/**', 'tools/deslop.py', '.github/workflows/slop.yml']
+  pull_request:
+    paths: ['site/**', 'tools/deslop.py', '.github/workflows/slop.yml']
+
+jobs:
+  deslop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Score the site copy
+        run: python3 tools/deslop.py site/index.html
