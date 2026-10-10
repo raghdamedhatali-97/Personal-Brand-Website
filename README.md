@@ -1,6 +1,6 @@
 # Personal Brand Website
 
-Raghda Medhat Ali's personal website, branded as **The FP&A Engineer**: an editorial single page (ivory, big serif type, a moving wall of FP&A cheat-code cards), with a hand-painted animation made in code.
+Raghda Medhat Ali's career portfolio, branded as **The FP&A Engineer**: one editorial page with experience, projects, skills, education and a CV download, plus a hand-painted animation made in code.
 
 The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/ClaudeAnimationBase) by John Heibel (MIT): Clawd, a character kit for [p5.js](https://p5js.org) and [p5.brush](https://github.com/acamposuribe/p5.brush), and a headless renderer that turns a scene into an MP4. This repo recreates that kit and adds the website on top of it.
 
@@ -16,7 +16,7 @@ The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/Clau
 | [site/brand.html](site/brand.html) | A one-page visual brand board (open `/brand.html` on the site). |
 | [site/assets/brand/](site/assets/brand/) | Logo files: mark, reversed mark and wordmark (SVG). |
 | [site/assets/](site/assets/) | The painted video, its poster frame and the favicon. |
-| [site/effects.js](site/effects.js) | All the page motion: GSAP intro and scroll effects, Lenis smooth scrolling, and vanilla ports of React Bits' SplitText and ScrollVelocity. |
+| [site/effects.js](site/effects.js) | All the page motion: GSAP intro and scroll effects, Lenis smooth scrolling, and a vanilla port of React Bits' SplitText. |
 | [site/vendor/](site/vendor/) | GSAP (+ ScrollTrigger, SplitText) and Lenis, copied from npm by `npm run vendor`, so the site needs no CDN. |
 | [tools/deslop.py](tools/deslop.py) | SlopMonster's copy checker. `npm run slop` scores the site's text for AI-writing tells; GitHub runs it on every push. |
 | [src/scenes/hero.js](src/scenes/hero.js) | The hero animation, "Growing": Clawd waters bar-chart seedlings into a rising chart. Storyboard in [STORYBOARD.md](STORYBOARD.md). |
@@ -29,14 +29,15 @@ The animation engine is [ClaudeAnimationBase](https://github.com/JohnHeibel/Clau
 
 ## Edit the website
 
-1. Open [site/index.html](site/index.html) and replace everything marked `EDIT:` and every `[bracketed placeholder]`: your story, experience, links and email.
+1. Open [site/index.html](site/index.html) and replace everything marked `EDIT:` and every `[bracketed placeholder]`: your summary, roles, projects, skills, education, links and email.
+   Save your CV as `site/assets/Raghda-Medhat-Ali-CV.pdf` so the Download CV buttons work.
 2. Preview it: `npm run site`, then open http://localhost:8080.
 
 ## Motion and copy checks
 
-- **GSAP** ([greensock/GSAP](https://github.com/greensock/GSAP)) runs the headline intro, the drifting card-wall columns, word-by-word statements and the work illustrations drawing themselves.
+- **GSAP** ([greensock/GSAP](https://github.com/greensock/GSAP)) runs the name intro, word-by-word statements, sections easing in and the project illustrations drawing themselves.
 - **Lenis** ([darkroomengineering/lenis](https://github.com/darkroomengineering/lenis)) gives the page smooth scrolling, synced with GSAP's ScrollTrigger.
-- **React Bits** ([DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)) components are React, and this site is plain HTML, so `effects.js` ports two of them to vanilla JS with GSAP: SplitText (headlines) and ScrollVelocity (the card wall speeds up as you scroll). Their licence notice is kept at the top of the file.
+- **React Bits** ([DavidHDev/react-bits](https://github.com/DavidHDev/react-bits)) components are React, and this site is plain HTML, so `effects.js` ports its SplitText text reveal to vanilla JS with GSAP. Their licence notice is kept at the top of the file.
 - **SlopMonster** ([ItsssssJack/SlopMonster](https://github.com/ItsssssJack/SlopMonster)) checks the visible copy for AI-writing patterns. Run `npm run slop` after editing the text.
 
 Visitors who turn on "reduce motion" get the plain, static page.

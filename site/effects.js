@@ -1,6 +1,6 @@
 // effects.js: motion for the site, built on GSAP (+ ScrollTrigger, SplitText) and Lenis smooth scrolling.
-// The word-by-word text reveal and the scroll-linked speed of the card wall are vanilla ports of React Bits components
-// (https://github.com/DavidHDev/react-bits): SplitText and ScrollVelocity.
+// The word-by-word text reveal is a vanilla port of the React Bits SplitText component
+// (https://github.com/DavidHDev/react-bits).
 //   React Bits: Copyright (c) 2026 David Haz. MIT + Commons Clause License Condition v1.0. Permission is hereby granted,
 //   free of charge, to any person obtaining a copy of this software and associated documentation files (the
 //   "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy,
@@ -26,24 +26,15 @@
   }
 
   document.fonts.ready.then(() => {
-    // ---------- hero intro: the headline rises word by word, the badge rolls in ----------
+    // ---------- hero intro: the name rises word by word, then the details follow ----------
     const head = new SplitText('.hero h1', { type: 'lines,words', mask: 'lines' });
-    gsap.set('.hero h1, .badge', { autoAlpha: 1 });
+    gsap.set('.hero > *', { autoAlpha: 1 });
     gsap.timeline({ defaults: { ease: 'power4.out' } })
-      .from(head.words, { yPercent: 110, duration: 1.1, stagger: .07 })
-      .from('.badge', { autoAlpha: 0, scale: .6, rotate: -90, duration: 1, ease: 'back.out(1.6)' }, '-=.7')
-      .from('.wall .col', { yPercent: 18, autoAlpha: 0, duration: 1.2, stagger: { each: .06, from: 'center' } }, '-=.9');
-
-    // ---------- card wall: each column drifts on its own loop, alternating up and down ----------
-    gsap.utils.toArray('.wall .col').forEach((col, i) => {
-      [...col.children].forEach(c => col.appendChild(c.cloneNode(true)).setAttribute('aria-hidden', 'true'));
-      const dir = i % 2 ? 1 : -1, half = () => (col.scrollHeight + parseFloat(getComputedStyle(col).rowGap || 0)) / 2;   // one set plus one gap: a seamless loop
-      const tween = gsap.fromTo(col, { y: dir < 0 ? 0 : () => -half() }, { y: dir < 0 ? () => -half() : 0, duration: 38 + (i % 3) * 7, ease: 'none', repeat: -1, invalidateOnRefresh: true });
-      // scrolling the page nudges the wall along, like ScrollVelocity
-      if (lenis) lenis.on('scroll', ({ velocity }) => tween.timeScale(1 + Math.min(4, Math.abs(velocity) * .25)));
-      col.addEventListener('pointerenter', () => gsap.to(tween, { timeScale: .15, duration: .5 }));
-      col.addEventListener('pointerleave', () => gsap.to(tween, { timeScale: 1, duration: .5 }));
-    });
+      .from('.hero .eyebrow', { autoAlpha: 0, y: 12, duration: .6 })
+      .from(head.words, { yPercent: 110, duration: 1.1, stagger: .08 }, '-=.3')
+      .from('.hero-lede, .hero .cta', { autoAlpha: 0, y: 24, duration: .8, stagger: .1 }, '-=.6')
+      .from('.facts div', { autoAlpha: 0, y: 16, duration: .6, stagger: .06 }, '-=.5')
+      .from('.badge', { autoAlpha: 0, scale: .6, rotate: -90, duration: 1, ease: 'back.out(1.6)' }, '-=1');
 
     // ---------- SplitText (React Bits): statements and section titles rise in word by word ----------
     document.querySelectorAll('.statement, .section-head h2, .quote-band blockquote').forEach(el => {
@@ -53,7 +44,7 @@
     });
 
     // ---------- blocks arrive in a staggered wave ----------
-    const wave = '.partner-side > *, .do-list li, .case, .section-head .eyebrow, .quote-band figcaption, .contact .cta';
+    const wave = '.about > *, .roles > li, .case, .skill-groups > div, .edu li, .section-head .eyebrow, .quote-band figcaption, .contact .cta';
     gsap.set(wave, { autoAlpha: 0, y: 36 });
     ScrollTrigger.batch(wave, { start: 'top 90%', once: true,
       onEnter: els => gsap.to(els, { autoAlpha: 1, y: 0, duration: .9, ease: 'power3.out', stagger: .08 }) });
