@@ -49,58 +49,29 @@ Recommended: **1**. It names the buyer, the service and the reason to follow.
 
 ---
 
-## 3. Instagram + YouTube (Arabic)
+## 3. Instagram + YouTube
 
-Dialect: **Egyptian, with neutral words** where Gulf viewers might not follow. Egyptian is widely understood across the Gulf.
+**Profile text is in English** (name, bio, descriptions). The videos themselves are spoken in Egyptian Arabic.
 
 ### Handle (same on Instagram and YouTube)
-Your name is the safest asset because it survives any change of topic. Check availability in this order:
-1. `@raghda.medhat`
-2. `@raghdamedhat`
-3. `@raghda.medhat.ali`
+Check in this order: `@raghda.medhat` → `@raghdamedhat` → `@raghda.medhat.ali`
 
-### Display name (Instagram's name field is searchable, so it carries keywords)
-| Option | Arabic | Why |
-|---|---|---|
-| A | رغدة مدحت · فلوس وذكاء اصطناعي | Clear search terms: money + AI |
-| B | رغدة · فلوس، AI، وحياة | Covers all three pillars |
-| C | رغدة مدحت · مش روبوت | Playful, anti-brain-rot angle; more Egyptian |
+### Name field (searchable, so it carries keywords)
+`Raghda Medhat | Money · AI · Career`
 
-Recommended: **A** on Instagram, `Raghda Medhat · رغدة مدحت` as the YouTube channel name.
+### Show name (umbrella for the series)
+| Option | Feel |
+|---|---|
+| **Mind & Wallet** | Money + thinking; covers all 3 pillars |
+| **Human Intelligence** | Use AI smartly, keep your brain |
+| **Not a Robot** | Playful, anti-brain-rot |
 
-### Show name (umbrella for the Arabic series)
-| Option | Meaning | Feel |
-|---|---|---|
-| **عقل ومحفظة** | "A mind and a wallet" | Money + thinking; covers all 3 pillars |
-| **ذكاء بشري** | "Human intelligence" | AI smartly, brain kept alive |
-| **مش روبوت** | "Not a robot" | Funny, memorable, Egyptian |
-
-Each series inside it gets its own name, e.g. **«من غير ما أقدّم»** ("Without applying"): how you haven't applied for a job since 2022 and still get 5–6 offers a year.
-
-### Instagram bio (max 150 characters), 3 options
-1. ```
-   بعلّمك تستخدم الـAI في فلوسك وشغلك وحياتك
-   وإزاي عقلك يفضل شغّال بعيد عن الشاشة
-   فيديوهين جداد كل يوم 👇
-   ```
-2. ```
-   فلوس + ذكاء اصطناعي + حياة حقيقية
-   مبقتش أقدّم على شغل من 2022 وبيجيلي عروض كل سنة
-   هوريك إزاي 👇
-   ```
-3. ```
-   مديرة مالية بتشرح الـAI بالبلدي
-   أدوات تسهّل حياتك، وفلوس تكبر، وهوايات ترجّعلك عقلك
-   ```
-Option 3 needs your title confirmed: `[ ]`.
-
-Link in bio: one page with the free playbook + YouTube + LinkedIn.
+Series inside it get their own names, e.g. **"Without Applying"**: how you haven't applied for a job since 2022 and still get 5–6 offers a year.
 
 ### YouTube channel description (first 2 lines show in search)
 ```
-فيديوهات بتعلّمك تستخدم الذكاء الاصطناعي في شغلك وفلوسك وحياتك اليومية،
-وإزاي تبني هوايات تحافظ على عقلك بعيد عن الشاشة.
-3 فيديوهات كل أسبوع.
+Use AI to grow your money and your career, and build hobbies that keep your brain yours.
+New videos 3 times a week. Videos in Arabic.
 ```
 
 ---
@@ -136,23 +107,17 @@ Link in bio: one page with the free playbook + YouTube + LinkedIn.
 
 ---
 
-## 6. Instagram bio v2 (modelled on profiles Raghda likes)
+## 6. Instagram bio (English, modelled on profiles Raghda likes)
 
-Patterns taken from: Hannah Zank, Lucy, Mira Sayed, Habiba, "Elevating your 30s", the Claude Code creator.
-1. Name field = name + 3 topic words (searchable).
-2. One line naming who it's for.
-3. One proof line in your own story ("did it myself", "X turned Y").
-4. Email in the bio or the contact button (brand deals).
-5. A free guide as the first link.
-
-Name field: `Raghda Medhat | فلوس · AI · شغل`
+Patterns from Hannah Zank, Lucy, Mira Sayed, Habiba, "Elevating your 30s": name + 3 topics, who it's for, one proof line, email, free guide link.
+All options fit 150 characters with a 25-character email.
 
 | # | Modelled on | Bio |
 |---|---|---|
-| 1 | Hannah Zank | لكل طموح عايز يكبر في عصر الـAI 🚀 / مالية ← أنظمة مالية للشركات ← محتوى / فلوس · شغل · عقل صاحي / 📩 [email] / ⬇️ الدليل المجاني |
-| 2 | Lucy (manifesto line) | خلّي الـAI يشتغل لك، مش مكانك / فلوس أذكى · شغل أسهل · هوايات ترجّعلك عقلك / 📍[city] \| 📩 [email] / ⬇️ ابدأ من هنا |
-| 3 | Habiba (proof) | بساعدك تكبر في شغلك وفلوسك بالـAI / عملتها بنفسي: من 2022 ما قدّمتش على شغل وبيجيلي ٥-٦ عروض كل سنة / 📍[city] \| 📩 [email] |
-| 4 | Mira (X turned Y) | بنيت أنظمة مالية لشركات، ودلوقتي بعلّمك تبني واحد لحياتك بالـAI / 📍[city] \| 📩 [email] / ⬇️ فيديوهات + الدليل المجاني |
-| 5 | Elevating your 30s | أنظمة بسيطة لفلوسك ووقتك وعقلك / الـAI يوفّر وقتك، والهواية ترجّعلك عقلك / تقدّم صغير كل يوم / 🎁 الدليل المجاني ⬇️ |
+| 1 | Hannah Zank | For the ambitious, growing in the AI era 🚀 / Finance → systems builder → creator / Money · Career · Your brain, kept / 📩 [email] |
+| 2 | Lucy | Let AI work for you, not instead of you / Smarter money · Easier work · Real hobbies / 📍[city] \| 📩 [email] |
+| 3 | Habiba | Helping you grow your career and money with AI / Did it myself: no job applications since 2022 / 📩 [email] |
+| 4 | Mira Sayed | Finance systems builder turned AI creator / Now I help you build a system for your life / 📍[city] \| 📩 [email] |
+| 5 | Elevating your 30s | Simple systems for your money, time and mind / AI saves your time. Hobbies give your brain back. / 🎁 Free guide ⬇️ |
 
-Recommended: **2 + 3 combined** (line 1 of #2, line 2 of #3, then city and email).
+**Recommended:** Let AI work for you, not instead of you / No job applications since 2022. Still 5–6 offers a year / 📍[city] \| 📩 [email]
