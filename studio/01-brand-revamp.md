@@ -133,3 +133,26 @@ Link in bio: one page with the free playbook + YouTube + LinkedIn.
 3. Show name: عقل ومحفظة / ذكاء بشري / مش روبوت / your own
 4. Instagram bio: 1, 2 or 3
 5. Which handle is free
+
+---
+
+## 6. Instagram bio v2 (modelled on profiles Raghda likes)
+
+Patterns taken from: Hannah Zank, Lucy, Mira Sayed, Habiba, "Elevating your 30s", the Claude Code creator.
+1. Name field = name + 3 topic words (searchable).
+2. One line naming who it's for.
+3. One proof line in your own story ("did it myself", "X turned Y").
+4. Email in the bio or the contact button (brand deals).
+5. A free guide as the first link.
+
+Name field: `Raghda Medhat | فلوس · AI · شغل`
+
+| # | Modelled on | Bio |
+|---|---|---|
+| 1 | Hannah Zank | لكل طموح عايز يكبر في عصر الـAI 🚀 / مالية ← أنظمة مالية للشركات ← محتوى / فلوس · شغل · عقل صاحي / 📩 [email] / ⬇️ الدليل المجاني |
+| 2 | Lucy (manifesto line) | خلّي الـAI يشتغل لك، مش مكانك / فلوس أذكى · شغل أسهل · هوايات ترجّعلك عقلك / 📍[city] \| 📩 [email] / ⬇️ ابدأ من هنا |
+| 3 | Habiba (proof) | بساعدك تكبر في شغلك وفلوسك بالـAI / عملتها بنفسي: من 2022 ما قدّمتش على شغل وبيجيلي ٥-٦ عروض كل سنة / 📍[city] \| 📩 [email] |
+| 4 | Mira (X turned Y) | بنيت أنظمة مالية لشركات، ودلوقتي بعلّمك تبني واحد لحياتك بالـAI / 📍[city] \| 📩 [email] / ⬇️ فيديوهات + الدليل المجاني |
+| 5 | Elevating your 30s | أنظمة بسيطة لفلوسك ووقتك وعقلك / الـAI يوفّر وقتك، والهواية ترجّعلك عقلك / تقدّم صغير كل يوم / 🎁 الدليل المجاني ⬇️ |
+
+Recommended: **2 + 3 combined** (line 1 of #2, line 2 of #3, then city and email).
